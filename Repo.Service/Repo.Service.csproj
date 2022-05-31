@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hl7.Fhir.Support" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repo.DTO\Repo.DTO.csproj" />
+    <ProjectReference Include="..\Repo.Model\Repo.Model.csproj" />
+    <ProjectReference Include="..\Repo.Repository\Repo.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

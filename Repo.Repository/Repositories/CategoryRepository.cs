@@ -1,0 +1,22 @@
+﻿using Repo.Model;
+using Repo.Repository.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Repo.Repository.Repositories
+{
+    public interface ICategoryRepository : IRepository<Category>
+    {
+
+    }
+    public class CatrgoryRepository : Repository<Category>, ICategoryRepository
+    {
+        public CatrgoryRepository(Contex contex) : base(contex)
+        {
+
+        }
+    }
+}
