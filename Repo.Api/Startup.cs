@@ -38,7 +38,7 @@ namespace Repo.Api
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("ADMIN"));
-                options.AddPolicy("ALL", policy => policy.RequireRole( "User", "Admin"));
+                options.AddPolicy("ALL", policy => policy.RequireRole("USER", "ADMIN"));
 
             });
 

@@ -25,7 +25,7 @@ namespace Repo.Api.Controllers
             return Ok(products);
         }
 
-        [Authorize(Policy = "User")]
+        [Authorize(Policy = "All")]
         [HttpPost]
         [Produces(typeof(Product))]
         public IActionResult AddProduct(ProductAddDTO addDTO)

@@ -17,7 +17,8 @@ namespace Repo.Api.Controllers
         {
             _categoryService = categoryService;
         }
-
+        
+        [Authorize(Policy = "All")]
         [HttpGet]
         [Produces(typeof(IEnumerable<Category>))]
         public async Task<IActionResult> GetCategoryList()
@@ -29,7 +30,7 @@ namespace Repo.Api.Controllers
         [Authorize(Policy = "Admin")]
         [HttpPost]
         [Produces(typeof(Category))]
-        public IActionResult AddProduct(CategoryAddDTO addDTO)
+        public IActionResult AddCategory(CategoryAddDTO addDTO)
         {
             return Ok(_categoryService.AddCategory(addDTO));
         }
@@ -38,7 +39,7 @@ namespace Repo.Api.Controllers
         [HttpPut]
         [Route("{id}")]
         [Produces(typeof(User))]
-        public async Task<IActionResult> UpdateProduct(CategoryUpdateDTO updateDTO)
+        public async Task<IActionResult> UpdateCategory(CategoryUpdateDTO updateDTO)
         {
             return Ok(await _categoryService.UpdateCategory(updateDTO));
         }
@@ -47,7 +48,7 @@ namespace Repo.Api.Controllers
         [HttpDelete]
         [Route("{id}")]
         [Produces(typeof(bool))]
-        public async Task<bool> DeleteProduct(int id)
+        public async Task<bool> DeleteCategory(int id)
         {
             return await _categoryService.DeleteCategory(id);
         }
