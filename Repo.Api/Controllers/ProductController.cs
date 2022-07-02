@@ -19,7 +19,7 @@ namespace Repo.Api.Controllers
 
         [HttpGet]
         [Produces(typeof(IEnumerable<Product>))]
-        public async Task<IActionResult> getUserList()
+        public async Task<IActionResult> GetProductList()
         {
             IEnumerable<Product> products = await _productService.GetAllProduct();
             return Ok(products);
