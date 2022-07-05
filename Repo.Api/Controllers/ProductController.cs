@@ -28,9 +28,9 @@ namespace Repo.Api.Controllers
         [Authorize(Policy = "All")]
         [HttpPost]
         [Produces(typeof(Product))]
-        public IActionResult AddProduct(ProductAddDTO addDTO)
+        public async Task<IActionResult> AddProduct(ProductAddDTO addDTO)
         {
-            return Ok(_productService.AddProduct(addDTO));
+            return Ok(await _productService.AddProduct(addDTO));
         }
 
         [Authorize(Policy = "Admin")]

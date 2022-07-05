@@ -30,9 +30,9 @@ namespace Repo.Api.Controllers
         [Authorize(Policy = "Admin")]
         [HttpPost]
         [Produces(typeof(Category))]
-        public IActionResult AddCategory(CategoryAddDTO addDTO)
+        public async Task<IActionResult> AddCategory(CategoryAddDTO addDTO)
         {
-            return Ok(_categoryService.AddCategory(addDTO));
+            return  Ok(await _categoryService.AddCategory(addDTO));
         }
 
         [Authorize(Policy = "Admin")]

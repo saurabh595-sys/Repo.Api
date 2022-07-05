@@ -21,11 +21,15 @@ namespace Repo.Model
         [Required]
         public DateTime CreatedDate { get; set; }
 
-        public  int RoleID { get; set; }
+        [Display(Name = "Roles")]
+        public virtual int RoleId { get; set; }
 
-    
-        
+        [ForeignKey("RoleId")]
+        public virtual Roles Roles { get; set; }
 
-      
+
+
+
+
     }
 }
